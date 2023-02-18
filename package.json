@@ -17,7 +17,12 @@
   },
   "homepage": "https://github.com/thales352/shawandpartnersbackend#readme",
   "dependencies": {
+    "@octokit/rest": "^19.0.7",
     "axios": "^1.3.3",
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.4.3",
+    "supertest": "^6.3.3"
   }
 }
