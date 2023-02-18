@@ -2,6 +2,10 @@ const request = require("supertest");
 const app = require("../src/server");
 
 describe("API endpoints", () => {
+  afterAll((done) => {
+    app.close(done);
+  });
+
   test("GET /api/users?since={number} responds with JSON and status 200", async () => {
     const response = await request(app).get("/api/users?since=0");
     expect(response.statusCode).toBe(200);
