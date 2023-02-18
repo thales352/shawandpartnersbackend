@@ -8,8 +8,11 @@ app.get("/api/users", async (req, res) => {
   try {
     const since = req.query.since;
     const { data, link } = await users.getUsers(since);
-    res.set("Link", link);
-    res.json(data);
+    const responsebody = {
+      data: data,
+      link: link,
+    };
+    res.json(responsebody);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal server error" });
